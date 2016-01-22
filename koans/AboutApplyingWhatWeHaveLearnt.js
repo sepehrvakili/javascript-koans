@@ -68,7 +68,7 @@ describe("About Applying What We Have Learnt", function() {
 
   it("should add all the natural numbers below 1000 that are multiples of 3 or 5 (functional)", function () {
 
-    var sum = _.chain(1).range(1000)
+    var sum = _(_.range(1, 1000)).chain()
       .filter(function(x) { return x % 3 === 0 || x % 5 === 0 } )
       .reduce(function(sum, x) { return sum + x } ).value();
 
@@ -92,7 +92,7 @@ describe("About Applying What We Have Learnt", function() {
     var ingredientCount = { "{ingredient name}": 0 };
 
     /* chain() together map(), flatten() and reduce() */
-    ingredientCount = _.chain(products)
+    ingredientCount = _(products).chain()
                         .map(function(x) { 
                               return x.ingredients
                             }
